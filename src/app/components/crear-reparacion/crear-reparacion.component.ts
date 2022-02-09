@@ -22,8 +22,8 @@ export class CrearReparacionComponent implements OnInit {
   }
   crearReparacion(){
     const REPARACION: Reparacion = {
-      NombreReparacion: this.reparacionForm.get('nombre')?.value,
-      CosteBase: this.reparacionForm.get('coste')?.value
+      _nombreReparacion: this.reparacionForm.get('nombre')?.value,
+      _CosteBase: this.reparacionForm.get('coste')?.value
     }
     console.log(REPARACION);
     this.router.navigate(['/']);
