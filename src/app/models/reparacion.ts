@@ -1,5 +1,5 @@
 export class Reparacion{
-    _idReparacion: number;
+    _idReparacion?: number;
     NombreReparacion: string;
     CosteBase: number;
 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon'
 
 @Component({
   selector: 'app-listar-reparacion',
@@ -6,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listar-reparacion.component.css']
 })
 export class ListarReparacionComponent implements OnInit {
+  constructor() { 
 
-  constructor() { }
-
+  } 
   ngOnInit(): void {
   }
 

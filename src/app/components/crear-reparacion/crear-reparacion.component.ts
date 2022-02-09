@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Reparacion } from 'src/app/models/reparacion';
 
 @Component({
   selector: 'app-crear-reparacion',
@@ -8,16 +10,22 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class CrearReparacionComponent implements OnInit {
   reparacionForm: FormGroup;
-  constructor(private fb: FormBuilder) {
+
+  constructor(private fb: FormBuilder,private router: Router) {
     this.reparacionForm = this.fb.group({
-      
+      nombre: ['', Validators.required],
+      coste: ['', Validators.required]
     })
    }
 
   ngOnInit(): void {
   }
   crearReparacion(){
-
+    const REPARACION: Reparacion = {
+      NombreReparacion: this.reparacionForm.get('nombre')?.value,
+      CosteBase: this.reparacionForm.get('coste')?.value
+    }
+    console.log(REPARACION);
+    this.router.navigate(['/']);
   }
-
 }
