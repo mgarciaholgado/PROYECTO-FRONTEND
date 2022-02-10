@@ -1,4 +1,4 @@
-export class Reparacion{
+export class Reparaciones {
     _nombreReparacion: string;
     _CosteBase: number;
 

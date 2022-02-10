@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Reparacion } from 'src/app/models/reparacion';
+import { Reparaciones } from 'src/app/models/reparacion';
+import { ReparacionService } from 'src/app/services/reparacion.service';
 
 @Component({
   selector: 'app-crear-reparacion',
@@ -11,7 +12,7 @@ import { Reparacion } from 'src/app/models/reparacion';
 export class CrearReparacionComponent implements OnInit {
   reparacionForm: FormGroup;
 
-  constructor(private fb: FormBuilder,private router: Router) {
+  constructor(private fb: FormBuilder,private router: Router, private _reparacionesService: ReparacionService) {
     this.reparacionForm = this.fb.group({
       nombre: ['', Validators.required],
       coste: ['', Validators.required]
@@ -21,11 +22,12 @@ export class CrearReparacionComponent implements OnInit {
   ngOnInit(): void {
   }
   crearReparacion(){
-    const REPARACION: Reparacion = {
+    const REPARACION: Reparaciones = {
       _nombreReparacion: this.reparacionForm.get('nombre')?.value,
       _CosteBase: this.reparacionForm.get('coste')?.value
     }
-    console.log(REPARACION);
+    this._reparacionesService.crearReparaciones(REPARACION).subscribe(data =>{
     this.router.navigate(['/']);
+    })
   }
 }

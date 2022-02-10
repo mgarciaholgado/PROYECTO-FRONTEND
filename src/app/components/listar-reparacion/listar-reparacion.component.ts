@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon'
 import { ReparacionService } from 'src/app/services/reparacion.service';
+import { Reparaciones } from 'src/app/models/reparacion';
 
 @Component({
   selector: 'app-listar-reparacion',
@@ -9,6 +10,7 @@ import { ReparacionService } from 'src/app/services/reparacion.service';
   styleUrls: ['./listar-reparacion.component.css']
 })
 export class ListarReparacionComponent implements OnInit {
+  listarReparaciones: Reparaciones[] = [];
   constructor(private _reparacionesService: ReparacionService) { 
 
   } 
@@ -17,7 +19,14 @@ export class ListarReparacionComponent implements OnInit {
   }
   obtenerReparaciones(){
     this._reparacionesService.getReparaciones().subscribe(data => {
-      console.log(data)
+      this.listarReparaciones = data;
     })
   }
+
+  eliminarReparaciones(nombre:any){
+    this._reparacionesService.eliminarReparaciones(nombre).subscribe(data =>{
+      this.obtenerReparaciones();
+    })
+  }
+
 }

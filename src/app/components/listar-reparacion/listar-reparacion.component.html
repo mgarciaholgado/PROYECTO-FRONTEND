@@ -14,20 +14,12 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
+                          <tr *ngFor="let reparaciones of listarReparaciones">
                             <th scope="row">1</th>
-                            <td>Cambio de aceite</td>
-                            <td>40</td>
+                            <td>{{reparaciones._nombreReparacion}}</td>
+                            <td>{{reparaciones._CosteBase | currency: 'EUR'}}</td>
                             <td><i class="fas fa-pen-to-square"></i>
-                                <i class="fas fa-trash-can text-danger"></i>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Cambio de ruedas</td>
-                            <td>50</td>
-                            <td><i class="fas fa-pen-to-square"></i>
-                                <i class="fas fa-trash-can text-danger"></i>
+                                <i (click)="eliminarReparaciones(reparaciones._nombreReparacion)" class="fas fa-trash-can text-danger"></i>
                             </td>
                           </tr>
                         </tbody>
