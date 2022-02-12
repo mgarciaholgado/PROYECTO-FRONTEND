@@ -4,11 +4,7 @@
             <div class="card">
                 <div class="card-body text-center">
                     <span class="titulo">CREAR REPARACION</span>
-                    <form class="mt-3" [formGroup]="reparacionForm" (ngSubmit)="crearReparacion()">
-                        <div class="mb-3">
-                            <input type="number" formControlName="codigo"
-                             class="form-control" placeholder="Codigo Reparacion">
-                        </div>
+                    <form class="mt-3" [formGroup]="editForm" (ngSubmit)="editarReparacion()">
                         <div class="mb-3">
                             <input type="text" formControlName="nombre"
                              class="form-control" placeholder="Nombre Reparacion">

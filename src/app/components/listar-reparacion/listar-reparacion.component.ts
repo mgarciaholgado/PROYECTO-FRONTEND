@@ -23,9 +23,9 @@ export class ListarReparacionComponent implements OnInit {
     })
   }
 
-  eliminarReparaciones(nombre:any){
-    this._reparacionesService.eliminarReparaciones(nombre).subscribe(data =>{
-      this.obtenerReparaciones();
+  eliminarReparaciones(codReparacion:any){
+    this._reparacionesService.eliminarReparaciones(codReparacion).subscribe(data =>{
+    this.obtenerReparaciones();
     })
   }
 
