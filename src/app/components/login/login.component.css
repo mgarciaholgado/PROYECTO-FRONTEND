@@ -6,6 +6,7 @@
 }
 
 .login{
+    margin-top: 30px;
     width: 100%;
     max-width: 330px;
     text-align: center;
@@ -17,5 +18,7 @@
 }
 
 .spinner{
+    margin-top: 50px;
+    align-items: center;
     margin: 0 auto;
 }

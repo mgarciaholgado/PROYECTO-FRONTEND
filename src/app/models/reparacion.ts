@@ -1,10 +1,12 @@
 export class Reparaciones {
-    _codReparacion: number;
-    _nombreReparacion: string;
-    _CosteBase: number;
+    public _codReparacion: number;
+    public _matricula: string;
+    public _nombreReparacion: string;
+    public _CosteBase: number;
 
-    constructor(codigo:number, nombre: string, coste: number){
+    constructor(codigo:number, matricula:string,nombre: string, coste: number){
         this._codReparacion = codigo;
+        this._matricula = matricula;
         this._nombreReparacion = nombre;
         this._CosteBase = coste;
     }
@@ -13,11 +15,7 @@ export class Reparaciones {
 
 export type tReparaciones = {
     codigo: number;
-    nombre: string;
-    coste: number;
-  };
-
-  export type modReparaciones = {
+    matricula: string;
     nombre: string;
     coste: number;
   };

@@ -5,27 +5,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-
-
-
-
-
+import { RouterModule } from '@angular/router';
 
 // COMPONENTES
 import { AppComponent } from './app.component';
 import { CrearReparacionComponent } from './components/crear-reparacion/crear-reparacion.component';
 import { ListarReparacionComponent } from './components/listar-reparacion/listar-reparacion.component';
-import { EditarReparacionComponent } from './components/editar-reparacion/editar-reparacion.component';
 import { LoginComponent } from './components/login/login.component';
 import { SharedModule } from './components/shared/shared.module';
+import { ListarVehiculosComponent } from './components/listar-vehiculos/listar-vehiculos.component';
+import { CrearVehiculosComponent } from './components/crear-vehiculos/crear-vehiculos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CrearReparacionComponent,
     ListarReparacionComponent,
-    EditarReparacionComponent,
-    LoginComponent
+    LoginComponent,
+    ListarVehiculosComponent,
+    CrearVehiculosComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +31,8 @@ import { SharedModule } from './components/shared/shared.module';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent],
