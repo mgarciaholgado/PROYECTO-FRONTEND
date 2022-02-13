@@ -8,7 +8,7 @@ import { tVehiculo } from '../models/vehiculo';
   providedIn: 'root'
 })
 export class ReparacionService {
-  url = 'http://localhost:3000';
+  url = 'https://mechanic-api-rest.herokuapp.com';
   constructor(private http: HttpClient) { }
 
   getReparaciones(): Observable<any>{
