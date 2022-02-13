@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 app.use(express.static('./dist/heroesapi006'));
 app.get('/*', function(req, res) {
- res.sendFile('index.html', {root: 'dist/ptr-frtontend/'}
+ res.sendFile('index.html', {root: 'dist/proyecto-fronted/'}
  );
 });
 const port = 3500;
